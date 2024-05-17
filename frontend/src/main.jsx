@@ -6,6 +6,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { mode } from "@chakra-ui/theme-tools";
 import { BrowserRouter } from "react-router-dom";
 import { extendTheme } from "@chakra-ui/react";
+import { RecoilRoot } from "recoil";
 
 // changing the background of the body depending upon the light or dark mode
 const styles = {
@@ -31,13 +32,15 @@ const colors = {
 
 export const theme = extendTheme({ config, styles, colors });
 
-
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <ChakraProvider theme={theme}>
-        <App />
-      </ChakraProvider>
-    </BrowserRouter>
-  </React.StrictMode>
+  // React.Strickmode renders everycomponent twice on development
+  // <React.StrictMode>
+    <RecoilRoot>
+      <BrowserRouter>
+        <ChakraProvider theme={theme}>
+          <App />
+        </ChakraProvider>
+      </BrowserRouter>
+    </RecoilRoot>
+  // </React.StrictMode>
 );
