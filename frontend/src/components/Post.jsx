@@ -12,6 +12,7 @@ import userAtom from "../atoms/userAtom.js";
 import postsAtom from "../atoms/postsAtom.js";
 
 const Post = ({ post, postedBy }) => {
+	console.log("this is post prop passed to Post.jsx: ", post)
 	const [user, setUser] = useState(null);
 	const showToast = useShowToast();
 	const currentUser = useRecoilValue(userAtom);
