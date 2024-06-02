@@ -19,6 +19,7 @@ const ChatPage = () => {
 	const currentUser = useRecoilValue(userAtom);
 	const showToast = useShowToast();
 	const { socket, onlineUsers } = useSocket();
+	console.log("ChatPage > onlineUsers: ", onlineUsers)
 
 	useEffect(() => {
 		socket?.on("messagesSeen", ({ conversationId }) => {

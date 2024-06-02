@@ -16,6 +16,7 @@ import { BsCheck2All, BsFillImageFill } from "react-icons/bs";
 import { selectedConversationAtom } from "../atoms/messagesAtom";
 
 const Conversation = ({ conversation, isOnline }) => {
+	console.log("Conversation Component > isOnline: ", isOnline)
 	const user = conversation.participants[0];
 	const currentUser = useRecoilValue(userAtom);
 	const lastMessage = conversation.lastMessage;
