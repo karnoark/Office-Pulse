@@ -69,19 +69,6 @@ const PostPage = () => {
 	if (!currentPost) return null;
 	console.log("currentPost", currentPost);
 
-  const formattedDate = (createdAt) => {
-    try {
-      const date = new Date(createdAt);
-      if (isNaN(date)) {
-        throw new Error('Invalid date');
-      }
-      return formatDistanceToNow(date) + ' ago';
-    } catch (error) {
-      console.error('Error formatting date:', error);
-      return 'Invalid date';
-    }
-  };
-
 	return (
 		<>
 			<Flex>
@@ -96,8 +83,7 @@ const PostPage = () => {
 				</Flex>
 				<Flex gap={4} alignItems={"center"}>
 					<Text fontSize={"xs"} width={36} textAlign={"right"} color={"gray.light"}>
-						{/* {formatDistanceToNow(new Date(currentPost.createdAt))} ago */}
-            {formattedDate(currentPost.createdAt)} ago
+						{formatDistanceToNow(new Date(currentPost.createdAt))} ago
 					</Text>
 
 					{currentUser?._id === user._id && (

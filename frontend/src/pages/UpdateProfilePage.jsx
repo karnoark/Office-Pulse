@@ -51,7 +51,6 @@ export default function UpdateProfilePage() {
 			}
 			showToast("Success", "Profile updated successfully", "success");
 			setUser(data);
-			// console.log("this is updateProfilePage, here is a recoil state userAtom's user:  ", user)
 			localStorage.setItem("user-threads", JSON.stringify(data));
 		} catch (error) {
 			showToast("Error", error, "error");
@@ -90,7 +89,7 @@ export default function UpdateProfilePage() {
 					<FormControl>
 						<FormLabel>Full name</FormLabel>
 						<Input
-							placeholder='Mayuresh K'
+							placeholder='John Doe'
 							value={inputs.name}
 							onChange={(e) => setInputs({ ...inputs, name: e.target.value })}
 							_placeholder={{ color: "gray.500" }}
@@ -100,7 +99,7 @@ export default function UpdateProfilePage() {
 					<FormControl>
 						<FormLabel>User name</FormLabel>
 						<Input
-							placeholder='mayuresh'
+							placeholder='johndoe'
 							value={inputs.username}
 							onChange={(e) => setInputs({ ...inputs, username: e.target.value })}
 							_placeholder={{ color: "gray.500" }}
@@ -130,7 +129,7 @@ export default function UpdateProfilePage() {
 					<FormControl>
 						<FormLabel>Password</FormLabel>
 						<Input
-							placeholder="Don't put 123456"
+							placeholder='password'
 							value={inputs.password}
 							onChange={(e) => setInputs({ ...inputs, password: e.target.value })}
 							_placeholder={{ color: "gray.500" }}
